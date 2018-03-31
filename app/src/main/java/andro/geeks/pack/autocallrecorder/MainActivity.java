@@ -2,6 +2,7 @@ package andro.geeks.pack.autocallrecorder;
 
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.provider.CallLog;
@@ -21,6 +22,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -132,7 +135,10 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()){
 
                 case R.id.sort:
-                    Toast.makeText(getApplicationContext(),"Sort",Toast.LENGTH_SHORT).show();
+                    SortingDialog();
+
+                    break;
+                case R.id.search:
                     break;
 
             }
@@ -288,6 +294,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+
+
+
+    }
+
+
+    public void SortingDialog(){
+        Dialog dialog=new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.sortingmenu);
+        dialog.setCancelable(true);
+        CheckBox Ascending=(CheckBox)dialog.findViewById(R.id.Ascending);
+        CheckBox Descending=(CheckBox)dialog.findViewById(R.id.Descending);
+        dialog.show();
+
 
 
 
