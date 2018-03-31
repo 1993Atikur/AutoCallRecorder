@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:checkable="true"
+
+        />
+
+    <item android:title="About Us"
+        android:id="@+id/about"
+        android:icon="@drawable/about"
+        android:checkable="true"
+
+
+        />
+    <item android:title="Settings"
+        android:id="@+id/settings"
+        android:icon="@drawable/settings"
+        android:checkable="true"
+
+
+        />
+    <item android:title="EXIT"
+        android:id="@+id/exit"
+        android:icon="@drawable/exit"
+        android:checkable="true"
+
+
+        />
+
+
+
+
+</menu>

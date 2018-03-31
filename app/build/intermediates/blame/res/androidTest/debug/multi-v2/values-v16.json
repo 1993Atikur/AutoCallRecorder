@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/9e105955ab83c28c55363095776318cc/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        }
+    ]
+}
