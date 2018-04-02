@@ -1,22 +1,31 @@
 package andro.geeks.pack.autocallrecorder;
 
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.provider.CallLog;
 import android.provider.ContactsContract;
 import android.renderscript.Type;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -37,20 +46,28 @@ import java.util.Date;
 import java.util.List;
 
 import andro.geeks.pack.autocallrecorder.FragmentTab.CustomPagerAdapter;
+import andro.geeks.pack.autocallrecorder.Recycleerview.Callers;
 
 
 public class MainActivity extends AppCompatActivity {
+
+
+
+
+
+
+    ArrayList<Callers> callersArrayListIncoming=new ArrayList<>();
+    ArrayList<Callers> callersArrayListOutgoing=new ArrayList<>();
+    ArrayList<Callers> callersArrayListall=new ArrayList<>();
+
+
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
 
 
     SimpleDateFormat format;
 
-    List<List>NAME=new ArrayList<List>();
-    List<List>NUMBER=new ArrayList<List>();
-    List<List>DATE=new ArrayList<List>();
-    List<List>DURATION=new ArrayList<List>();
-
+    List<List>ObjectList=new ArrayList<>();
 
 
 
@@ -60,29 +77,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ObjectList.add(0,new ArrayList<Callers>());
+        ObjectList.add(1,new ArrayList<Callers>());
+        ObjectList.add(2,new ArrayList<Callers>());
+
+
+
+
+
         drawerLayout=(DrawerLayout)findViewById(R.id.drawerlayout);
         NavigationView navigationView=(NavigationView)findViewById(R.id.navigatior);
         toggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
-        for(int i=0;i<3;i++){
-            NAME.add(i,new ArrayList<String>() );
-            NUMBER.add(i,new ArrayList<String>());
-            DATE.add(i,new ArrayList());
-            DURATION.add(i,new ArrayList());
-
-        }
-
-
-
+        Setter();
 
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
         SetNavigationMenuItemSelector(navigationView);
         SetActionSwitch(navigationView);
-        Setter();
+
+
+
+
 
         TabLayout tabLayout=(TabLayout)findViewById(R.id.tablayout);
         final ViewPager viewPager=(ViewPager)findViewById(R.id.viewpager);
@@ -91,9 +109,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("All Calls"));
         tabLayout.addTab(tabLayout.newTab().setText("Incoming"));
         tabLayout.addTab(tabLayout.newTab().setText("Outgoing"));
-        CustomPagerAdapter adapter=new CustomPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount(),
-                NAME,NUMBER,DURATION,DATE
-        );
+        CustomPagerAdapter adapter=new CustomPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount(), ObjectList,this);
 
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -121,27 +137,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.topmenu,menu);
 
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-            switch (item.getItemId()){
-
-                case R.id.sort:
-                    SortingDialog();
-
-                    break;
-                case R.id.search:
-                    break;
-
-            }
 
         if(toggle.onOptionsItemSelected(item)){
 
@@ -222,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
     public void Setter(){
         int number,date,duration,type,name,minute,second;
         String Name,currentdate;
-
+        Callers []obj= new Callers[100];
 
 
         Cursor mCursor = managedQuery(CallLog.Calls.CONTENT_URI, null, null, null, CallLog.Calls.DEFAULT_SORT_ORDER);
@@ -240,6 +240,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             i++;
+
+            obj[i]=new Callers();
             String callduration = mCursor.getString(duration);
             String callnumber=mCursor.getString(number);
             String calltype = mCursor.getString(type);
@@ -262,29 +264,22 @@ public class MainActivity extends AppCompatActivity {
 
 
                 case CallLog.Calls.INCOMING_TYPE:
-                    NAME.get(0).add(Name);
-                    NUMBER.get(0).add(callnumber);
-                    DURATION.get(0).add(time);
-                    DATE.get(0).add(currentdate);
-                    NAME.get(2).add(Name);
-                    NUMBER.get(2).add(callnumber);
-                    DURATION.get(2).add(time);
-                    DATE.get(2).add(currentdate);
 
-
-
+                    obj[i].setName(Name);
+                    obj[i].setNumber(callnumber);
+                    obj[i].setDate(currentdate);
+                    obj[i].setDuration(time);
+                    ObjectList.get(0).add(obj[i]);
+                    ObjectList.get(2).add(obj[i]);
                     break;
                 case CallLog.Calls.OUTGOING_TYPE:
-                    NAME.get(1).add(Name);
-                    NUMBER.get(1).add(callnumber);
-                    DURATION.get(1).add(time);
-                    DATE.get(1).add(currentdate);
-                    NAME.get(2).add(Name);
-                    NUMBER.get(2).add(callnumber);
-                    DURATION.get(2).add(time);
-                    DATE.get(2).add(currentdate);
 
-
+                    obj[i].setName(Name);
+                    obj[i].setNumber(callnumber);
+                    obj[i].setDate(currentdate);
+                    obj[i].setDuration(time);
+                    ObjectList.get(1).add(obj[i]);
+                    ObjectList.get(2).add(obj[i]);
                     break;
 
             }
@@ -300,19 +295,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void SortingDialog(){
-        Dialog dialog=new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.sortingmenu);
-        dialog.setCancelable(true);
-        CheckBox Ascending=(CheckBox)dialog.findViewById(R.id.Ascending);
-        CheckBox Descending=(CheckBox)dialog.findViewById(R.id.Descending);
-        dialog.show();
 
-
-
-
-    }
 
 
 

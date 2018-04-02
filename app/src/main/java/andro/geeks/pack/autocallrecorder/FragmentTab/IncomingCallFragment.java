@@ -2,17 +2,29 @@ package andro.geeks.pack.autocallrecorder.FragmentTab;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.CheckBox;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import andro.geeks.pack.autocallrecorder.R;
+import andro.geeks.pack.autocallrecorder.Recycleerview.Callers;
 import andro.geeks.pack.autocallrecorder.Recycleerview.CustomRecyclerView;
 
 
@@ -21,21 +33,16 @@ import andro.geeks.pack.autocallrecorder.Recycleerview.CustomRecyclerView;
  */
 @SuppressLint("ValidFragment")
 public class IncomingCallFragment  extends Fragment{
-    List<String>Name;
-    List<String>Number;
-    List<String>Date;
-    List<String>Duration;
 
+    CustomRecyclerView customRecyclerView;
     View view;
+    ArrayList<Callers> callersArrayList;
 
 
     @SuppressLint("ValidFragment")
-    public IncomingCallFragment(List<String>Name,List<String>Number,List<String>Duration,List<String>Date){
+    public IncomingCallFragment( ArrayList<Callers> callersArrayList){
 
-      this.Name=Name;
-        this.Number=Number;
-        this.Duration=Duration;
-        this.Date=Date;
+        this.callersArrayList=callersArrayList;
     }
 
     @Nullable
@@ -45,10 +52,70 @@ public class IncomingCallFragment  extends Fragment{
         view=inflater.inflate(R.layout.incoming,container,false);
        RecyclerView recyclerView=(RecyclerView)view.findViewById(R.id.incomingCallList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        CustomRecyclerView customRecyclerView=new CustomRecyclerView(getActivity(),Name,Number,Duration,Date);
+        customRecyclerView=new CustomRecyclerView(getActivity(),callersArrayList);
         recyclerView.setAdapter(customRecyclerView);
 
 
         return view;
     }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.topmenu,menu);
+        MenuItem item = menu.findItem(R.id.search);
+        SearchView searchView=(SearchView)item.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                customRecyclerView.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.sort:
+                SortingDialog();
+                break;
+
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    public void SortingDialog(){
+        Dialog dialog=new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.sortingmenu);
+        dialog.setCancelable(true);
+        CheckBox Ascending=(CheckBox)dialog.findViewById(R.id.Ascending);
+        CheckBox Descending=(CheckBox)dialog.findViewById(R.id.Descending);
+        dialog.show();
+
+
+
+
+    }
+
 }

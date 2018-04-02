@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,20 +18,18 @@ import java.util.List;
 import andro.geeks.pack.autocallrecorder.R;
 
 
-public class CustomRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class CustomRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHolder>implements Filterable {
 
     Context context;
-    List<String> Name=new ArrayList<>();
-    List<String>Number=new ArrayList<>();
-    List<String>Duration=new ArrayList<>();
-    List<String>Date=new ArrayList<>();
 
-    public CustomRecyclerView(Context context,List<String>Name,List<String>Number,List<String>Duration,List<String>Date){
+    ArrayList<Callers> callers,filterList;
+
+    CustomFilter filter;
+
+    public CustomRecyclerView(Context context,ArrayList<Callers> callers){
         this.context=context;
-        this.Name=Name;
-        this.Number=Number;
-        this.Duration=Duration;
-        this.Date=Date;
+        this.callers=callers;
+        this.filterList=callers;
 
 
     }
@@ -49,15 +49,15 @@ public class CustomRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
 
-        ((MyViewHolder)holder).t_FirstLetter.setText(String.valueOf(Name.get(position).charAt(0)));
-        ((MyViewHolder)holder).t_Name.setText(Name.get(position));
-        ((MyViewHolder)holder).t_Number.setText(Number.get(position));
-        ((MyViewHolder)holder).t_Date.setText(Date.get(position));
-        ((MyViewHolder)holder).t_Duration.setText(Duration.get(0));
+        ((MyViewHolder)holder).t_FirstLetter.setText(String.valueOf(callers.get(position).getName().charAt(0)));
+        ((MyViewHolder)holder).t_Name.setText(callers.get(position).getName());
+        ((MyViewHolder)holder).t_Number.setText(callers.get(position).getNumber());
+        ((MyViewHolder)holder).t_Date.setText(callers.get(position).getDate());
+        ((MyViewHolder)holder).t_Duration.setText(callers.get(position).getDuration());
         ((MyViewHolder)holder).more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,Name.get(position),Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,callers.get(position).getName(),Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -66,7 +66,17 @@ public class CustomRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public int getItemCount() {
-        return Name.size();
+        return callers.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        if(filter==null)
+        {
+            filter=new CustomFilter(filterList,this);
+        }
+
+        return filter;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{

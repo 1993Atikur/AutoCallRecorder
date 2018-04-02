@@ -1,20 +1,42 @@
 package andro.geeks.pack.autocallrecorder.FragmentTab;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.CallLog;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.ListView;
+import android.widget.Toast;
 
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import andro.geeks.pack.autocallrecorder.R;
+import andro.geeks.pack.autocallrecorder.Recycleerview.Callers;
 import andro.geeks.pack.autocallrecorder.Recycleerview.CustomRecyclerView;
 
 
@@ -25,23 +47,16 @@ import andro.geeks.pack.autocallrecorder.Recycleerview.CustomRecyclerView;
 @SuppressLint("ValidFragment")
 public class AllCallFragment extends Fragment {
 
-    List<String>Name=new ArrayList<String>();
-    List<String>Number=new ArrayList<String>();
-    List<String>Date=new ArrayList<String>();
-    List<String>Duration=new ArrayList<String>();
-
     View view;
-
-
+    ArrayList<Callers> callersArrayList;
+    CustomRecyclerView customRecyclerView;
     RecyclerView recyclerView;
+    Context context;
     @SuppressLint("ValidFragment")
-    public AllCallFragment(List<String>Name,List<String>Number,List<String>Duration,List<String>Date) {
+    public AllCallFragment(ArrayList<Callers>callersArrayList, Context context) {
 
-       this.Name=Name;
-       this.Number=Number;
-       this.Date=Date;
-       this.Duration=Duration;
-
+        this.context=context;
+        this.callersArrayList=callersArrayList;
 
     }
 
@@ -49,12 +64,73 @@ public class AllCallFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        view=inflater.inflate(R.layout.allcall,container,false);
-        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerview);
+        view = inflater.inflate(R.layout.allcall, container, false);
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        CustomRecyclerView customRecyclerView=new CustomRecyclerView(getActivity(),Name,Number,Duration,Date);
+        customRecyclerView = new CustomRecyclerView(getActivity(), callersArrayList);
         recyclerView.setAdapter(customRecyclerView);
 
         return view;
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.topmenu,menu);
+        MenuItem item = menu.findItem(R.id.search);
+
+        SearchView searchView=(SearchView)item.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                customRecyclerView.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.sort:
+                SortingDialog();
+                break;
+
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    public void SortingDialog(){
+        Dialog dialog=new Dialog(getActivity());
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.sortingmenu);
+        dialog.setCancelable(true);
+        CheckBox Ascending=(CheckBox)dialog.findViewById(R.id.Ascending);
+        CheckBox Descending=(CheckBox)dialog.findViewById(R.id.Descending);
+        dialog.show();
+
+
+
+
     }
 }
