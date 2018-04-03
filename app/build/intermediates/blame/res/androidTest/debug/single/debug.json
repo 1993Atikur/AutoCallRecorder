@@ -64,12 +64,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/9e105955ab83c28c55363095776318cc/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_design_ic_visibility.png.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/drawable-hdpi-v4/design_ic_visibility.png"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/9e105955ab83c28c55363095776318cc/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-anydpi-v21_design_ic_visibility.xml.flat",
@@ -256,12 +256,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-mdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/layout_abc_list_menu_item_icon.xml.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/layout/abc_list_menu_item_icon.xml"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/anim_design_bottom_sheet_slide_in.xml.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/anim/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/layout_abc_list_menu_item_icon.xml.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/layout/abc_list_menu_item_icon.xml"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -424,12 +424,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable/abc_ic_voice_search_api_material.xml"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xxhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/layout_design_navigation_item_header.xml.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/layout/design_navigation_item_header.xml"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xxhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-v21_design_password_eye.xml.flat",
@@ -652,12 +652,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-mdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-ldrtl-xxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-ldrtl-xxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/layout_design_layout_tab_icon.xml.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/layout/design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-ldrtl-xxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-ldrtl-xxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
@@ -704,16 +704,16 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xxxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/anim_design_snackbar_out.xml.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/anim/design_snackbar_out.xml"
+    },
+    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-mdpi-v4/abc_list_pressed_holo_dark.9.png"
-    },
-    {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/anim_design_snackbar_out.xml.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/anim/design_snackbar_out.xml"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-ldrtl-hdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -876,12 +876,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-mdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/layout_design_bottom_navigation_item.xml.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/layout/design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/animator-v21_design_appbar_state_list_animator.xml.flat",
@@ -960,12 +960,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/color/abc_hint_foreground_material_light.xml"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/layout_design_layout_snackbar.xml.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/layout/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
@@ -1056,12 +1056,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-hdpi-v4/abc_ic_star_black_48dp.png"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/layout_design_navigation_menu.xml.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/layout/design_navigation_menu.xml"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-hdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
@@ -1072,12 +1072,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xhdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable_design_bottom_navigation_item_background.xml.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/drawable/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable_abc_btn_borderless_material.xml.flat",
@@ -1276,12 +1276,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-mdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xxhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xxhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-mdpi-v4_design_ic_visibility_off.png.flat",
@@ -1384,12 +1384,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4_design_ic_visibility.png.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/drawable-xxxhdpi-v4/design_ic_visibility.png"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/layout_abc_alert_dialog_button_bar_material.xml.flat",
@@ -1508,12 +1508,12 @@
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-mdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-v23_abc_control_background_material.xml.flat",
-        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-v23/abc_control_background_material.xml"
-    },
-    {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-v21_avd_show_password.xml.flat",
         "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/res/drawable-v21/avd_show_password.xml"
+    },
+    {
+        "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-v23_abc_control_background_material.xml.flat",
+        "source": "/home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/res/drawable-v23/abc_control_background_material.xml"
     },
     {
         "merged": "/mnt/Software/Project/AutoCallRecorder/app/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",

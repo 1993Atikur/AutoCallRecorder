@@ -1,18 +1,19 @@
 package andro.geeks.pack.autocallrecorder.Recycleerview;
 
+import android.os.Parcel;
+
 /**
  * Created by pallob on 4/2/18.
  */
 
-public class Callers {
+public class Callers  {
     String name;
     String number;
     String date;
     String duration;
 
-    public String getName() {
-        return name;
-    }
+
+    public String getName() {return name;}
 
     public void setName(String name) {
         this.name = name;
@@ -41,4 +42,7 @@ public class Callers {
     public void setDuration(String duration) {
         this.duration = duration;
     }
+
+
+
 }

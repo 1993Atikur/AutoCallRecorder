@@ -2,46 +2,35 @@ package andro.geeks.pack.autocallrecorder;
 
 
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
+
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Typeface;
+
+
 import android.os.Build;
 import android.provider.CallLog;
-import android.provider.ContactsContract;
-import android.renderscript.Type;
+
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
+
 import java.util.Date;
 import java.util.List;
 
@@ -50,39 +39,30 @@ import andro.geeks.pack.autocallrecorder.Recycleerview.Callers;
 
 
 public class MainActivity extends AppCompatActivity {
-
-
-
-
-
-
-    ArrayList<Callers> callersArrayListIncoming=new ArrayList<>();
-    ArrayList<Callers> callersArrayListOutgoing=new ArrayList<>();
-    ArrayList<Callers> callersArrayListall=new ArrayList<>();
-
-
+    SimpleDateFormat format;
+    TabLayout tabLayout;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
-
-
-    SimpleDateFormat format;
-
+    CustomPagerAdapter adapter;
     List<List>ObjectList=new ArrayList<>();
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        tabLayout=(TabLayout)findViewById(R.id.tablayout);
+        final ViewPager viewPager=(ViewPager)findViewById(R.id.viewpager);
+        tabLayout.addTab(tabLayout.newTab().setText("All Calls"));
+        tabLayout.addTab(tabLayout.newTab().setText("Incoming"));
+        tabLayout.addTab(tabLayout.newTab().setText("Outgoing"));
         ObjectList.add(0,new ArrayList<Callers>());
         ObjectList.add(1,new ArrayList<Callers>());
         ObjectList.add(2,new ArrayList<Callers>());
 
 
+        Setter();
 
+        adapter=new CustomPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount(), ObjectList,this);
 
 
         drawerLayout=(DrawerLayout)findViewById(R.id.drawerlayout);
@@ -90,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         toggle=new ActionBarDrawerToggle(this,drawerLayout,R.string.Open,R.string.Close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        Setter();
 
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -102,14 +81,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        TabLayout tabLayout=(TabLayout)findViewById(R.id.tablayout);
-        final ViewPager viewPager=(ViewPager)findViewById(R.id.viewpager);
 
 
-        tabLayout.addTab(tabLayout.newTab().setText("All Calls"));
-        tabLayout.addTab(tabLayout.newTab().setText("Incoming"));
-        tabLayout.addTab(tabLayout.newTab().setText("Outgoing"));
-        CustomPagerAdapter adapter=new CustomPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount(), ObjectList,this);
 
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -216,51 +189,47 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-
-
-    public void Setter(){
-        int number,date,duration,type,name,minute,second;
-        String Name,currentdate;
-        Callers []obj= new Callers[100];
+    public void Setter() {
+        int number, date, duration, type, name, minute, second;
+        String Name, currentdate;
+        Callers[] obj = new Callers[10000];
 
 
         Cursor mCursor = managedQuery(CallLog.Calls.CONTENT_URI, null, null, null, CallLog.Calls.DEFAULT_SORT_ORDER);
-        number= mCursor.getColumnIndex(CallLog.Calls.NUMBER);
+        number = mCursor.getColumnIndex(CallLog.Calls.NUMBER);
         date = mCursor.getColumnIndex(CallLog.Calls.DATE);
         duration = mCursor.getColumnIndex(CallLog.Calls.DURATION);
         type = mCursor.getColumnIndex(CallLog.Calls.TYPE);
-        name= mCursor.getColumnIndex(CallLog.Calls.CACHED_NAME);
+        name = mCursor.getColumnIndex(CallLog.Calls.CACHED_NAME);
 
 
-        int i=0;
 
-        while (mCursor.moveToNext()){
-            if(i==100)
-                break;
+        int i = 0;
 
-            i++;
+        while (mCursor.moveToNext()) {
 
-            obj[i]=new Callers();
+
+            obj[i] = new Callers();
             String callduration = mCursor.getString(duration);
-            String callnumber=mCursor.getString(number);
+            String callnumber = mCursor.getString(number);
             String calltype = mCursor.getString(type);
             String calldate = mCursor.getString(date);
             String callname1 = mCursor.getString(name);
-            if(callname1==null){
-                Name="Unknown";
-            }else {
+            if (callname1 == null) {
+               SimpleDateFormat format; Name = "Unknown";
+            } else {
 
-                Name=callname1;
+                Name = callname1;
             }
 
-            minute = (Integer.valueOf(callduration)) / 60;second = (Integer.valueOf(callduration)) % 60;
-            String time= minute + " minutes " + second + " seconds";
-            Date calldaytime= new Date(Long.valueOf(calldate));
+            minute = (Integer.valueOf(callduration)) / 60;
+            second = (Integer.valueOf(callduration)) % 60;
+            String time = minute + " minutes " + second + " seconds";
+            Date calldaytime = new Date(Long.valueOf(calldate));
             format = new SimpleDateFormat("dd-MMMM-yy\nhh:mm aa");
             currentdate = format.format(calldaytime);
 
-            switch (Integer.parseInt(calltype)){
+            switch (Integer.parseInt(calltype)) {
 
 
                 case CallLog.Calls.INCOMING_TYPE:
@@ -284,19 +253,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-
-
-
-
+            i++;
         }
-
-
-
     }
 
 
 
-
-
-
 }
+

@@ -19,6 +19,7 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import andro.geeks.pack.autocallrecorder.R;
@@ -36,6 +37,7 @@ public class OutgoingCallFragment extends Fragment {
     List<String>Date;
     List<String>Duration;
     ArrayList<Callers> callersArrayList;
+    ArrayList<Callers> callersArrayListp;
     View view;
     CustomRecyclerView customRecyclerView;
 
@@ -43,6 +45,7 @@ public class OutgoingCallFragment extends Fragment {
     public OutgoingCallFragment( ArrayList<Callers> callersArrayList){
 
        this.callersArrayList=callersArrayList;
+
 
     }
 
