@@ -1,21 +1,15 @@
 package andro.geeks.pack.autocallrecorder;
 
 
-import android.Manifest;
-
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 
 
-import android.os.Build;
 import android.provider.CallLog;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -35,6 +29,7 @@ import java.util.Date;
 import java.util.List;
 
 import andro.geeks.pack.autocallrecorder.FragmentTab.CustomPagerAdapter;
+import andro.geeks.pack.autocallrecorder.RecordMedia.DataBase;
 import andro.geeks.pack.autocallrecorder.Recycleerview.Callers;
 
 
@@ -45,11 +40,16 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     CustomPagerAdapter adapter;
     List<List>ObjectList=new ArrayList<>();
+    DataBase dataBase;
+    String APPSTATE ;
+    boolean v;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       dataBase=new DataBase(this);
         tabLayout=(TabLayout)findViewById(R.id.tablayout);
         final ViewPager viewPager=(ViewPager)findViewById(R.id.viewpager);
         tabLayout.addTab(tabLayout.newTab().setText("All Calls"));
@@ -60,10 +60,18 @@ public class MainActivity extends AppCompatActivity {
         ObjectList.add(2,new ArrayList<Callers>());
 
 
+
         Setter();
 
         adapter=new CustomPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount(), ObjectList,this);
+        Cursor mycursor=dataBase.getall();
+        while (mycursor.moveToNext()){
+            APPSTATE=mycursor.getString(0);
 
+        }
+       if(APPSTATE==null){
+            v=dataBase.insertvalue("FALSE");
+       }
 
         drawerLayout=(DrawerLayout)findViewById(R.id.drawerlayout);
         NavigationView navigationView=(NavigationView)findViewById(R.id.navigatior);
@@ -172,17 +180,33 @@ public class MainActivity extends AppCompatActivity {
         TextView textView=(TextView)headerlayout.findViewById(R.id.Title);
 
 
+           if(APPSTATE.equals("TRUE")){
+               aswitch.setChecked(true);
+               aswitch.setText("Enabled");
+
+           }
+
+           else {
+            aswitch.setChecked(false);
+      }
+
 
         aswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    Toast.makeText(getApplicationContext(),"TURN ON",Toast.LENGTH_SHORT).show();
-                    aswitch.setText("Enabled");
+
+
+                            dataBase.delete();
+                            v=dataBase.insertvalue("TRUE");
+                            if (v)
+                            aswitch.setText("Enabled");
 
                 }else{
-
-                    Toast.makeText(getApplicationContext(),"TURN OFF",Toast.LENGTH_SHORT).show();
+                    dataBase.delete();
+                    v=dataBase.insertvalue("FALSE");
+                    if(v)
                     aswitch.setText("Disabled");
                 }
             }

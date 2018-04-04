@@ -1,6 +1,7 @@
 package andro.geeks.pack.autocallrecorder.Recycleerview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import andro.geeks.pack.autocallrecorder.R;
+import andro.geeks.pack.autocallrecorder.RecordMedia.RecordPlayer;
 
 
 public class CustomRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHolder>implements Filterable {
@@ -57,7 +59,11 @@ public class CustomRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHo
         ((MyViewHolder)holder).more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,callers.get(position).getName(),Toast.LENGTH_SHORT).show();
+
+
+                Intent intent=new Intent(context, RecordPlayer.class);
+                intent.putExtra("Name",callers.get(position).getName());
+                context.startActivity(intent);
 
             }
         });
