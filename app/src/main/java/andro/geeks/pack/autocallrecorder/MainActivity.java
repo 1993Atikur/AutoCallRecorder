@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     CustomPagerAdapter adapter;
     List<List>ObjectList=new ArrayList<>();
     DataBase dataBase;
-    String APPSTATE ;
+    String APPSTATE="" ;
     boolean v;
 
 
@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
        if(APPSTATE==null){
+            Toast.makeText(getApplicationContext(),APPSTATE+"lk",Toast.LENGTH_SHORT).show();
             v=dataBase.insertvalue("FALSE");
        }
 
@@ -84,12 +85,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
         SetNavigationMenuItemSelector(navigationView);
         SetActionSwitch(navigationView);
-
-
-
-
-
-
 
 
         viewPager.setAdapter(adapter);

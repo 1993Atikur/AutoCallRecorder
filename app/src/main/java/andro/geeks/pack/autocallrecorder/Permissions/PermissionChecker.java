@@ -17,6 +17,7 @@ import android.widget.Button;
 import andro.geeks.pack.autocallrecorder.MainActivity;
 import andro.geeks.pack.autocallrecorder.R;
 
+import static android.Manifest.permission.PROCESS_OUTGOING_CALLS;
 import static android.Manifest.permission.READ_CALL_LOG;
 import static android.Manifest.permission.READ_PHONE_STATE;
 import static android.Manifest.permission.WRITE_CALL_LOG;
@@ -81,7 +82,7 @@ public class PermissionChecker extends AppCompatActivity {
     private void RequestMultiplePermission() {
 
         ActivityCompat.requestPermissions(PermissionChecker.this, new String[]{
-                READ_CALL_LOG, WRITE_CALL_LOG, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE,READ_PHONE_STATE}, RequestPermissionCode);
+                READ_CALL_LOG, WRITE_CALL_LOG, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE,READ_PHONE_STATE,PROCESS_OUTGOING_CALLS}, RequestPermissionCode);
 
     }
 
@@ -98,9 +99,9 @@ public class PermissionChecker extends AppCompatActivity {
                     boolean readexternalstorage = grantResults[2] == PackageManager.PERMISSION_GRANTED;
                     boolean writeexternalstorage = grantResults[3] == PackageManager.PERMISSION_GRANTED;
                     boolean phonestate=grantResults[4]==PackageManager.PERMISSION_GRANTED;
+                    boolean processphonecall=grantResults[5]==PackageManager.PERMISSION_GRANTED;
 
-
-                    if (readcalllog && writecallog && readexternalstorage && writeexternalstorage && phonestate) {
+                    if (readcalllog && writecallog && readexternalstorage && writeexternalstorage && phonestate && processphonecall) {
 
                         Intent intent1 = new Intent(PermissionChecker.this, MainActivity.class);
                         startActivity(intent1);
@@ -124,12 +125,15 @@ public class PermissionChecker extends AppCompatActivity {
         int ThirdPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
         int ForthPermissionResult = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
         int Fiftpermission=ContextCompat.checkSelfPermission(getApplicationContext(),READ_PHONE_STATE);
+        int Sixthpermission=ContextCompat.checkSelfPermission(getApplicationContext(),PROCESS_OUTGOING_CALLS);
 
         return FirstPermissionResult == PackageManager.PERMISSION_GRANTED &&
                 SecondPermissionResult == PackageManager.PERMISSION_GRANTED &&
                 ThirdPermissionResult == PackageManager.PERMISSION_GRANTED &&
                 ForthPermissionResult == PackageManager.PERMISSION_GRANTED&&
-                Fiftpermission==PackageManager.PERMISSION_GRANTED;
+                Fiftpermission==PackageManager.PERMISSION_GRANTED &&
+                Sixthpermission==PackageManager.PERMISSION_GRANTED;
+
     }
 
 

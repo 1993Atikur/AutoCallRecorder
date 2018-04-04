@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-52:12
-INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-52:12
-INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-52:12
-INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-52:12
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-60:12
 MERGED from [com.android.support:design:26.1.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/40a35046d36c010106928efdf296d3b5/AndroidManifest.xml:17:1-28:12
@@ -18,20 +18,20 @@ MERGED from [com.android.support:support-media-compat:26.1.0] /home/pallob/.grad
 MERGED from [com.android.support:support-core-utils:26.1.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/0941cef0a7864b65d070b8e32466a888/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/9e105955ab83c28c55363095776318cc/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/284b2968d7b1a95cb92fd6d63b05705e/AndroidManifest.xml:17:1-30:12
-INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-52:12
-INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-52:12
-INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-60:12
 	package
 		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:3:5-48
 		INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml
 		INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-52:12
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-60:12
 		INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-52:12
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:1-60:12
 		INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:2:11-69
@@ -55,8 +55,12 @@ uses-permission#android.permission.READ_PHONE_STATE
 ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:8:5-74
 	android:name
 		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:8:22-72
+uses-permission#android.permission.PROCESS_OUTGOING_CALLS
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:9:22-78
 application
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:13:5-50:19
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:14:5-58:19
 MERGED from [com.android.support:design:26.1.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:design:26.1.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/a997d5fd210edd53634a56d1407508ae/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/11043b4052e0326757d4d94dde6c50f3/AndroidManifest.xml:25:5-29:19
@@ -86,57 +90,67 @@ MERGED from [com.android.support:support-compat:26.1.0] /home/pallob/.gradle/cac
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/284b2968d7b1a95cb92fd6d63b05705e/AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/pallob/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/284b2968d7b1a95cb92fd6d63b05705e/AndroidManifest.xml:24:5-28:19
 	android:supportsRtl
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:18:9-35
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:19:9-35
 	android:label
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:16:9-41
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:17:9-41
 	android:roundIcon
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:17:9-54
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:18:9-54
 	android:icon
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:15:9-37
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:16:9-37
 	android:allowBackup
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:14:9-35
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:15:9-35
 	android:theme
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:19:9-40
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:20:9-40
 activity#andro.geeks.pack.autocallrecorder.Permissions.PermissionChecker
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:20:9-28:20
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:21:9-29:20
 	android:theme
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:21:13-63
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:22:13-63
 	android:name
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:20:19-64
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:21:19-64
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:27:27-74
 activity#andro.geeks.pack.autocallrecorder.MainActivity
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:30:9-36:20
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:31:9-37:20
 	android:name
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:30:19-47
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:31:19-47
 intent-filter#android.intent.action.MAIN+android.intent.category.DEFAULT
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:31:13-35:29
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:32:13-36:29
 category#android.intent.category.DEFAULT
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:34:17-76
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:35:17-76
 	android:name
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:34:27-73
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:35:27-73
 activity#andro.geeks.pack.autocallrecorder.RecordMedia.RecordPlayer
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:37:9-43:20
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:38:9-44:20
 	android:name
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:37:19-59
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:38:19-59
 receiver#andro.geeks.pack.autocallrecorder.RecordMedia.IncomingCallDetector
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:44:9-48:20
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:45:9-49:20
 	android:name
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:44:19-67
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:45:19-67
 intent-filter#android.intent.action.PHONE_STATE
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:45:13-47:29
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:46:13-48:29
 action#android.intent.action.PHONE_STATE
-ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:46:17-75
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:47:17-75
 	android:name
-		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:46:25-73
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:47:25-73
+receiver#andro.geeks.pack.autocallrecorder.RecordMedia.OutGoingDetector
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:51:9-55:20
+	android:name
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:51:19-63
+intent-filter#android.intent.action.NEW_OUTGOING_CALL
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:52:13-54:29
+action#android.intent.action.NEW_OUTGOING_CALL
+ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:53:17-81
+	android:name
+		ADDED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml:53:25-79
 uses-sdk
 INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /mnt/Software/Project/AutoCallRecorder/app/src/main/AndroidManifest.xml
