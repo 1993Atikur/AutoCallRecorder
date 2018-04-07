@@ -13,7 +13,10 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
 
     <application
         android:allowBackup="true"
@@ -48,16 +51,10 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="andro.geeks.pack.autocallrecorder.RecordMedia.IncomingCallDetector" >
-            <intent-filter>
-                <action android:name="android.intent.action.PHONE_STATE" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name="andro.geeks.pack.autocallrecorder.RecordMedia.OutGoingDetector" >
-            <intent-filter>
-                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
-            </intent-filter>
-        </receiver>
+        <service android:name="andro.geeks.pack.autocallrecorder.RecordMedia.CallDetectorService" >
+        </service>
+        <service android:name="andro.geeks.pack.autocallrecorder.RecordMedia.IncomingService" />
+        <service android:name="andro.geeks.pack.autocallrecorder.RecordMedia.OutGoingService" />
 
         <meta-data
             android:name="android.support.VERSION"

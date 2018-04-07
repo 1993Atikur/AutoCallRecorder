@@ -11,13 +11,14 @@ import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import andro.geeks.pack.autocallrecorder.R;
 import andro.geeks.pack.autocallrecorder.RecordMedia.RecordPlayer;
+
+/**
+ * Created by pallob on 3/31/18.
+ */
 
 
 public class CustomRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHolder>implements Filterable {
@@ -51,7 +52,7 @@ public class CustomRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHo
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
 
-        ((MyViewHolder)holder).t_FirstLetter.setText(String.valueOf(callers.get(position).getName().charAt(0)));
+        ((MyViewHolder)holder).t_FirstLetter.setText(String.valueOf(callers.get(position).getName().charAt(0)).toUpperCase());
         ((MyViewHolder)holder).t_Name.setText(callers.get(position).getName());
         ((MyViewHolder)holder).t_Number.setText(callers.get(position).getNumber());
         ((MyViewHolder)holder).t_Date.setText(callers.get(position).getDate());

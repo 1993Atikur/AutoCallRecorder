@@ -1,6 +1,7 @@
 package andro.geeks.pack.autocallrecorder;
 
 
+import android.content.Intent;
 import android.database.Cursor;
 
 
@@ -29,8 +30,13 @@ import java.util.Date;
 import java.util.List;
 
 import andro.geeks.pack.autocallrecorder.FragmentTab.CustomPagerAdapter;
+import andro.geeks.pack.autocallrecorder.RecordMedia.CallDetectorService;
 import andro.geeks.pack.autocallrecorder.RecordMedia.DataBase;
 import andro.geeks.pack.autocallrecorder.Recycleerview.Callers;
+
+/**
+ * Created by pallob on 3/30/18.
+ */
 
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     String APPSTATE="" ;
     boolean v;
 
-
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         ObjectList.add(0,new ArrayList<Callers>());
         ObjectList.add(1,new ArrayList<Callers>());
         ObjectList.add(2,new ArrayList<Callers>());
-
+       intent=new Intent(MainActivity.this, CallDetectorService.class);
 
 
         Setter();
@@ -70,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
        if(APPSTATE==null){
-            Toast.makeText(getApplicationContext(),APPSTATE+"lk",Toast.LENGTH_SHORT).show();
             v=dataBase.insertvalue("FALSE");
        }
 
@@ -178,11 +183,13 @@ public class MainActivity extends AppCompatActivity {
            if(APPSTATE.equals("TRUE")){
                aswitch.setChecked(true);
                aswitch.setText("Enabled");
+               startService(intent);
 
            }
 
            else {
             aswitch.setChecked(false);
+
       }
 
 
@@ -197,12 +204,14 @@ public class MainActivity extends AppCompatActivity {
                             v=dataBase.insertvalue("TRUE");
                             if (v)
                             aswitch.setText("Enabled");
+                            startService(intent);
 
                 }else{
                     dataBase.delete();
                     v=dataBase.insertvalue("FALSE");
                     if(v)
                     aswitch.setText("Disabled");
+                    startService(intent);
                 }
             }
         });
@@ -245,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
             second = (Integer.valueOf(callduration)) % 60;
             String time = minute + " minutes " + second + " seconds";
             Date calldaytime = new Date(Long.valueOf(calldate));
-            format = new SimpleDateFormat("dd-MMMM-yy\nhh:mm aa");
+            format = new SimpleDateFormat("dd-MMMM-yy, hh:mm aa");
             currentdate = format.format(calldaytime);
 
             switch (Integer.parseInt(calltype)) {

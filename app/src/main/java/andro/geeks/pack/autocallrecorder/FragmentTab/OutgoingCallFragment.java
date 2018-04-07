@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -115,9 +116,25 @@ public class OutgoingCallFragment extends Fragment {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.sortingmenu);
         dialog.setCancelable(true);
-        CheckBox Ascending=(CheckBox)dialog.findViewById(R.id.Ascending);
-        CheckBox Descending=(CheckBox)dialog.findViewById(R.id.Descending);
+       final CheckBox Ascending=(CheckBox)dialog.findViewById(R.id.Ascending);
+        final CheckBox Descending=(CheckBox)dialog.findViewById(R.id.Descending);
         dialog.show();
+        Ascending.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Descending.setChecked(false);
+
+            }
+        });
+
+        Descending.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Ascending.setChecked(false);
+
+            }
+        });
+
 
 
 
