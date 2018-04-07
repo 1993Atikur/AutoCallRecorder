@@ -11,6 +11,7 @@ public class Callers  {
     String number;
     String date;
     String duration;
+    String fileName;
 
 
     public String getName() {return name;}
@@ -43,6 +44,11 @@ public class Callers  {
         this.duration = duration;
     }
 
+    public String getFileName() {
+        return fileName;
+    }
 
-
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 }

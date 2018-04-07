@@ -57,13 +57,14 @@ public class CustomRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHo
         ((MyViewHolder)holder).t_Number.setText(callers.get(position).getNumber());
         ((MyViewHolder)holder).t_Date.setText(callers.get(position).getDate());
         ((MyViewHolder)holder).t_Duration.setText(callers.get(position).getDuration());
+
         ((MyViewHolder)holder).more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
                 Intent intent=new Intent(context, RecordPlayer.class);
-                intent.putExtra("Name",callers.get(position).getName());
+                intent.putExtra("Name",callers.get(position).getFileName());
                 context.startActivity(intent);
 
             }

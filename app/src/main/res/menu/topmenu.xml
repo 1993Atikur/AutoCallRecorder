@@ -12,12 +12,12 @@
         android:title="Search"
         />
 
-    <item android:title="Sort"
+    <item android:title="about"
             android:checkable="true"
-            android:id="@+id/sort"
+            android:id="@+id/help"
         app:showAsAction="collapseActionView|ifRoom"
         android:iconTint="@android:color/white"
-        android:icon="@drawable/sort"
+        android:icon="@drawable/help"
 
         />
 </menu>

@@ -35,7 +35,7 @@ public class RecordingService extends Service {
     public void onDestroy() {
         super.onDestroy();
         Toast.makeText(getApplicationContext(),"Recording Stopped",LENGTH_SHORT).show();
-        stopRecording();
+        StopRecording();
         stopSelf();
     }
 
@@ -49,7 +49,7 @@ public class RecordingService extends Service {
             recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
             recorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
             Date date = new Date();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyhhmmaa");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyhhmmssaa");
             String currentDate = dateFormat.format(date);
             String path = Environment.getExternalStorageDirectory().getAbsolutePath();
 
@@ -73,7 +73,7 @@ public class RecordingService extends Service {
         }
     }
 
-    private void stopRecording() {
+    private void StopRecording() {
         if (recorder != null) {
             recorder.stop();
             recorder.release();

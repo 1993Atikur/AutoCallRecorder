@@ -94,7 +94,7 @@ public class IncomingCallFragment  extends Fragment{
 
         switch (item.getItemId()){
 
-            case R.id.sort:
+            case R.id.help:
                 SortingDialog();
                 break;
 
@@ -108,26 +108,10 @@ public class IncomingCallFragment  extends Fragment{
     public void SortingDialog(){
         Dialog dialog=new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.sortingmenu);
+        dialog.setContentView(R.layout.helpmenu);
         dialog.setCancelable(true);
-        final CheckBox Ascending=(CheckBox)dialog.findViewById(R.id.Ascending);
-       final CheckBox Descending=(CheckBox)dialog.findViewById(R.id.Descending);
         dialog.show();
 
-        Ascending.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Descending.setChecked(false);
-            }
-        });
-
-        Descending.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                Ascending.setChecked(false);
-
-            }
-        });
 
 
 

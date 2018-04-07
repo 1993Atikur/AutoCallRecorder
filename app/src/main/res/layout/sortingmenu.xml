@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     android:layout_gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="250dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
 
-    android:layout_height="200dp"
+    android:layout_height="150dp"
     android:weightSum="5"
     android:orientation="vertical"
+    android:background="#323232"
+    android:elevation="20dp"
     >
 
 
@@ -15,7 +18,8 @@
             android:layout_width="match_parent"
             android:text="Sort"
             android:textSize="15dp"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
+            android:elevation="20dp"
             android:gravity="center"
             />
 
@@ -23,22 +27,39 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="2"
+        android:weightSum="5"
         android:orientation="vertical"
+
+        android:paddingLeft="20dp"
         >
+        <View
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
         <CheckBox
             android:layout_weight="1"
             android:text="Date Ascending"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/Ascending"
+            android:textColor="@android:color/white"
             />
+        <View
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
         <CheckBox
             android:layout_weight="1"
             android:text="Date Descending"
             android:id="@+id/Descending"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColor="@android:color/white"
+            />
+        <View
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 
 

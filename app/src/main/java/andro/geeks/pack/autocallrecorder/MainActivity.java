@@ -40,7 +40,7 @@ import andro.geeks.pack.autocallrecorder.Recycleerview.Callers;
 
 
 public class MainActivity extends AppCompatActivity {
-    SimpleDateFormat format;
+    SimpleDateFormat format,filedate;
     TabLayout tabLayout;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
@@ -117,8 +117,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -219,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Setter() {
         int number, date, duration, type, name, minute, second;
-        String Name, currentdate;
+        String Name, currentdate,fileName;
         Callers[] obj = new Callers[10000];
 
 
@@ -237,6 +235,7 @@ public class MainActivity extends AppCompatActivity {
         while (mCursor.moveToNext()) {
 
 
+
             obj[i] = new Callers();
             String callduration = mCursor.getString(duration);
             String callnumber = mCursor.getString(number);
@@ -244,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
             String calldate = mCursor.getString(date);
             String callname1 = mCursor.getString(name);
             if (callname1 == null) {
-               SimpleDateFormat format; Name = "Unknown";
+                Name = "Unknown";
             } else {
 
                 Name = callname1;
@@ -254,7 +253,9 @@ public class MainActivity extends AppCompatActivity {
             second = (Integer.valueOf(callduration)) % 60;
             String time = minute + " minutes " + second + " seconds";
             Date calldaytime = new Date(Long.valueOf(calldate));
-            format = new SimpleDateFormat("dd-MMMM-yy, hh:mm aa");
+            format = new SimpleDateFormat("dd-MMMM-yy\nhh:mm aa");
+            filedate=new SimpleDateFormat("ddMMyyhhmmssaa");
+            fileName = filedate.format(calldaytime);
             currentdate = format.format(calldaytime);
 
             switch (Integer.parseInt(calltype)) {
@@ -266,6 +267,7 @@ public class MainActivity extends AppCompatActivity {
                     obj[i].setNumber(callnumber);
                     obj[i].setDate(currentdate);
                     obj[i].setDuration(time);
+                    obj[i].setFileName(fileName);
                     ObjectList.get(0).add(obj[i]);
                     ObjectList.get(2).add(obj[i]);
                     break;
@@ -275,6 +277,7 @@ public class MainActivity extends AppCompatActivity {
                     obj[i].setNumber(callnumber);
                     obj[i].setDate(currentdate);
                     obj[i].setDuration(time);
+                    obj[i].setFileName(fileName);
                     ObjectList.get(1).add(obj[i]);
                     ObjectList.get(2).add(obj[i]);
                     break;
