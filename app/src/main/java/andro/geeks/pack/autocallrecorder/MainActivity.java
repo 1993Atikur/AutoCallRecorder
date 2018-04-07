@@ -1,6 +1,7 @@
 package andro.geeks.pack.autocallrecorder;
 
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 
@@ -18,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -139,20 +141,23 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
 
                     case R.id.home:
-                        Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT).show();
 
+                        HomeOption();
                         drawerLayout.closeDrawers();
                         break;
                     case R.id.about:
-                        Toast.makeText(getApplicationContext(),"about",Toast.LENGTH_SHORT).show();
+                       About();
                         drawerLayout.closeDrawers();
                         break;
 
                     case R.id.settings:
-                        Toast.makeText(getApplicationContext(),"Settings",Toast.LENGTH_SHORT).show();
+                        SettingsOption();
                         drawerLayout.closeDrawers();
                         break;
-
+                    case R.id.sort:
+                        SortMenu();
+                        drawerLayout.closeDrawers();
+                        break;
                     case R.id.exit:
                         drawerLayout.closeDrawers();
                         finish();
@@ -287,6 +292,47 @@ public class MainActivity extends AppCompatActivity {
             i++;
         }
     }
+
+    public void SortMenu(){
+        Dialog dialog=new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.sortingmenu);
+        dialog.setCancelable(true);
+        dialog.show();
+
+
+    }
+
+    public void HomeOption(){
+        Dialog dialog=new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.homeoption);
+        dialog.setCancelable(true);
+        dialog.show();
+
+
+    }
+    public void About(){
+        Dialog dialog=new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.about);
+        dialog.setCancelable(true);
+        dialog.show();
+
+
+    }
+    public void SettingsOption(){
+        Dialog dialog=new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.settingsoption);
+        dialog.setCancelable(true);
+        dialog.show();
+
+
+    }
+
+
+
 
 
 

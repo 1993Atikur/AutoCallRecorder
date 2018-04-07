@@ -21,11 +21,8 @@ public class RecordPlayer extends AppCompatActivity {
 
         Intent intent=getIntent();
         String passedString=intent.getStringExtra("Name");
-        setContentView(R.layout.recordinterface);
-
-        textView=(TextView)findViewById(R.id.mytextview);
+        setContentView(R.layout.recordplayerinterface);
         getSupportActionBar().setTitle("");
-        textView.setText(passedString);
 
 
     }

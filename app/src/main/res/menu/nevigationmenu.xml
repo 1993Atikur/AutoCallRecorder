@@ -14,9 +14,9 @@
             android:icon="@drawable/about"
             android:checkable="true"/>
 
-        <item android:title="Help"
-            android:id="@+id/help"
-            android:icon="@drawable/help"
+        <item android:title="Sort"
+            android:id="@+id/sort"
+            android:icon="@drawable/sort"
             android:checkable="true"
 
 
