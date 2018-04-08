@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:layout_gravity="center_horizontal|right"
+    android:layout_gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="250dp"
     android:layout_height="350dp"
@@ -16,7 +16,7 @@
         android:layout_weight="4"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:text="Help"
+        android:text="FAQ"
         android:textSize="15dp"
         android:textColor="@android:color/black"
         android:gravity="center"
@@ -26,10 +26,18 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="2"
         android:orientation="vertical"
         >
+        <TextView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="If this apps doesn't work properly or behaving badly please feel free to contact us .Your little contribution will help us to make this apps perform better. "
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@android:color/black"
 
+            />
 
 
     </LinearLayout>

@@ -20,6 +20,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -51,8 +52,11 @@ public class MainActivity extends AppCompatActivity {
     DataBase dataBase;
     String APPSTATE="" ;
     boolean v;
+    String order;
+
 
     Intent intent;
+    Intent reciever;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
         ObjectList.add(2,new ArrayList<Callers>());
        intent=new Intent(MainActivity.this, CallDetectorService.class);
 
+       reciever=getIntent();
+       order=reciever.getStringExtra("ORDER");
+       if(order.equals("null")){
+           order=null;
+
+       }
 
         Setter();
 
@@ -140,11 +150,6 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
 
-                    case R.id.home:
-
-                        HomeOption();
-                        drawerLayout.closeDrawers();
-                        break;
                     case R.id.about:
                        About();
                         drawerLayout.closeDrawers();
@@ -154,8 +159,8 @@ public class MainActivity extends AppCompatActivity {
                         SettingsOption();
                         drawerLayout.closeDrawers();
                         break;
-                    case R.id.sort:
-                        SortMenu();
+                    case R.id.help:
+                        HelpMenu();
                         drawerLayout.closeDrawers();
                         break;
                     case R.id.exit:
@@ -223,10 +228,10 @@ public class MainActivity extends AppCompatActivity {
     public void Setter() {
         int number, date, duration, type, name, minute, second;
         String Name, currentdate,fileName;
-        Callers[] obj = new Callers[10000];
+        Callers[] obj = new Callers[100000];
 
 
-        Cursor mCursor = managedQuery(CallLog.Calls.CONTENT_URI, null, null, null, CallLog.Calls.DEFAULT_SORT_ORDER);
+        Cursor mCursor = managedQuery(CallLog.Calls.CONTENT_URI, null, null, null, order);
         number = mCursor.getColumnIndex(CallLog.Calls.NUMBER);
         date = mCursor.getColumnIndex(CallLog.Calls.DATE);
         duration = mCursor.getColumnIndex(CallLog.Calls.DURATION);
@@ -272,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
                     obj[i].setNumber(callnumber);
                     obj[i].setDate(currentdate);
                     obj[i].setDuration(time);
-                    obj[i].setFileName(fileName);
+                    obj[i].setFileName(fileName+"recordFile.mp4");
                     ObjectList.get(0).add(obj[i]);
                     ObjectList.get(2).add(obj[i]);
                     break;
@@ -282,10 +287,21 @@ public class MainActivity extends AppCompatActivity {
                     obj[i].setNumber(callnumber);
                     obj[i].setDate(currentdate);
                     obj[i].setDuration(time);
-                    obj[i].setFileName(fileName);
+                    obj[i].setFileName(fileName+"recordFile.mp4");
                     ObjectList.get(1).add(obj[i]);
                     ObjectList.get(2).add(obj[i]);
                     break;
+
+                case CallLog.Calls.MISSED_TYPE:
+                    obj[i].setName(Name);
+                    obj[i].setNumber(callnumber);
+                    obj[i].setDate(currentdate);
+                    obj[i].setDuration(time);
+                    obj[i].setFileName(fileName+"recordFile.mp4");
+                    ObjectList.get(0).add(obj[i]);
+                    ObjectList.get(2).add(obj[i]);
+                    break;
+
 
             }
 
@@ -293,25 +309,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void SortMenu(){
+    public void HelpMenu(){
         Dialog dialog=new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.sortingmenu);
+        dialog.setContentView(R.layout.helpmenu);
         dialog.setCancelable(true);
         dialog.show();
 
-
     }
 
-    public void HomeOption(){
-        Dialog dialog=new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.homeoption);
-        dialog.setCancelable(true);
-        dialog.show();
-
-
-    }
     public void About(){
         Dialog dialog=new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);

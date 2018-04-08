@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import android.content.pm.PackageManager;
 import android.os.CountDownTimer;
+import android.provider.CallLog;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -52,6 +53,7 @@ public class PermissionChecker extends AppCompatActivity {
                 @Override
                 public void onFinish() {
                     Intent intent1 = new Intent(PermissionChecker.this, MainActivity.class);
+                    intent1.putExtra("ORDER", CallLog.Calls.DEFAULT_SORT_ORDER);
                     startActivity(intent1);
                     finish();
 
@@ -68,6 +70,7 @@ public class PermissionChecker extends AppCompatActivity {
             setContentView(R.layout.permissioninterface);
             if (CheckingPermissionIsEnabledOrNot()) {
                 Intent intent1 = new Intent(PermissionChecker.this, MainActivity.class);
+                intent1.putExtra("ORDER", CallLog.Calls.DEFAULT_SORT_ORDER);
               startActivity(intent1);
                 finish();
             } else {
@@ -108,6 +111,7 @@ public class PermissionChecker extends AppCompatActivity {
                             && processphonecall && recordaudio ) {
 
                         Intent intent1 = new Intent(PermissionChecker.this, MainActivity.class);
+                        intent1.putExtra("ORDER", CallLog.Calls.DEFAULT_SORT_ORDER);
                         startActivity(intent1);
                         finish();
 

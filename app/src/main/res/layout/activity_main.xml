@@ -34,12 +34,13 @@
     </RelativeLayout>
 
  <android.support.design.widget.NavigationView
-     android:background="@android:color/darker_gray"
+     android:background="@android:color/white"
      android:layout_width="match_parent"
      android:layout_height="match_parent"
      app:menu="@menu/nevigationmenu"
      app:itemIconTint="@color/colorPrimary"
      app:itemTextColor="@android:color/holo_red_dark"
+     app:itemBackground="@drawable/itemback"
 
      app:headerLayout="@layout/head"
      android:id="@+id/navigatior"

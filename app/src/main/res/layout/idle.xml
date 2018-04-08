@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120px"
+        android:textSize="42px"
+        android:text="No record file exists for this selection !!"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        />
+
+    <Button
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/play"
+        />
+
+
+</LinearLayout>

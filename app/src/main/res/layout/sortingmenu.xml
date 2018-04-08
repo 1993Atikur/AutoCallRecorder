@@ -27,22 +27,22 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="5"
+        android:weightSum="3"
         android:orientation="vertical"
-
-        android:paddingLeft="20dp"
+        android:paddingRight="35dp"
+        android:paddingLeft="35dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="20dp"
         >
-        <View
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+
         <CheckBox
             android:layout_weight="1"
             android:text="Date Ascending"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/Ascending"
-            android:textColor="@android:color/white"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
             />
         <View
             android:layout_weight="1"
@@ -54,12 +54,10 @@
             android:id="@+id/Descending"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="@android:color/white"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
             />
-        <View
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+
 
 
 

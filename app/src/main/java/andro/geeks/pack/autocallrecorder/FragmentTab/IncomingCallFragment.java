@@ -3,7 +3,9 @@ package andro.geeks.pack.autocallrecorder.FragmentTab;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CallLog;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -24,6 +26,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import andro.geeks.pack.autocallrecorder.MainActivity;
 import andro.geeks.pack.autocallrecorder.R;
 import andro.geeks.pack.autocallrecorder.Recycleerview.Callers;
 import andro.geeks.pack.autocallrecorder.Recycleerview.CustomRecyclerView;
@@ -94,7 +97,7 @@ public class IncomingCallFragment  extends Fragment{
 
         switch (item.getItemId()){
 
-            case R.id.help:
+            case R.id.sort:
                 SortingDialog();
                 break;
 
@@ -108,15 +111,41 @@ public class IncomingCallFragment  extends Fragment{
     public void SortingDialog(){
         Dialog dialog=new Dialog(getActivity());
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.helpmenu);
+        dialog.setContentView(R.layout.sortingmenu);
+        final CheckBox acending=(CheckBox)dialog.findViewById(R.id.Ascending);
+        final CheckBox decending=(CheckBox)dialog.findViewById(R.id.Descending);
         dialog.setCancelable(true);
         dialog.show();
+        final Intent intent=new Intent(getActivity(),MainActivity.class);
+        acending.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked){
+                    decending.setChecked(false);
+
+                    intent.putExtra("ORDER","null");
+                    getActivity().startActivity(intent);
+                    getActivity().finish();
+
+                }
+            }
+        });
+
+        decending.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    acending.setChecked(false);
+
+                    intent.putExtra("ORDER", CallLog.Calls.DEFAULT_SORT_ORDER);
+                    getActivity().startActivity(intent);
+                    getActivity().finish();
 
 
-
-
-
-
+                }
+            }
+        });
     }
 
 }
